@@ -1,23 +1,29 @@
 import { useState } from "react";
 import classNames from "classnames";
 
-const ToggleSwitch2 = () => {
+const ToggleSwitch4 = () => {
   const [isSelected, setIsSelected] = useState(false);
 
-  const className = classNames(
-    "h-[20px] w-[20px] rounded-full bg-gray-300 tansition-all duration-500 shadow-lg",
-    {
-      "bg-indigo-800 mr-5 ": isSelected,
-    }
-  );
   return (
     <div
       onClick={() => setIsSelected(!isSelected)}
-      className="bg-white flex h-6 w-[44px] cursor-pointer flex-row-reverse items-center rounded-full border border-gray-200 p-[1px]"
+      className={classNames(
+        "bg-gray-200 flex h-6 w-[44px] cursor-pointer flex-row-reverse items-center rounded-full border border-gray-200 p-[1px]",
+        {
+          "bg-green-400 transition-all duration-700": isSelected,
+        }
+      )}
     >
-      <span className={className} />
+      <span
+        className={classNames(
+          "h-[20px] w-[20px] rounded-full bg-gray-100 tansition-all duration-500 shadow-lg",
+          {
+            " mr-5": isSelected,
+          }
+        )}
+      />
     </div>
   );
 };
 
-export default ToggleSwitch2;
+export default ToggleSwitch4;
